@@ -69,3 +69,9 @@ module.exports = {
   removeNote,
   logNote
 };
+
+//INSPECTING IN CHROME!!!
+//run command> node --inspect-brk <file name>
+//or run with nodemon instead of node
+//then go to browser> chrome://inspect
+// click on "open dedicated DevTools for Node"
