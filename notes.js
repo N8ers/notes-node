@@ -31,36 +31,28 @@ var addNote = (title, body) => {
 };
 
 var getAll = () => {
-  console.log('Getting all notes');
+  return fetchNotes();
 };
 
 var getNote = (title) => {
-  //fetching notes
   var notes = fetchNotes();
-  //call notes.filter to get all filtered notes
   var filteredNotes = notes.filter((note) => note.title === title);
   return filteredNotes[0];
 };
 
 var removeNote = (title) => {
-  //fetch notes
   var notes = fetchNotes();
-  //filter notes removing one with title of argument
   var filteredNotes = notes.filter((note) => note.title !== title);
-  //save new notes array
   saveNotes(filteredNotes);
+
   return notes.length !== filteredNotes.length;
 };
 
 var logNote = (note) => {
-    // Break on this line and use repl to output note
-    debugger;
-    //node inspect app.js read --title="to buy"
-    // use read command with --title
-    console.log('----');
-    console.log(`Title: ${note.title}`);
-    console.log(`Body: ${note.body}`);
-}
+  console.log('--');
+  console.log(`Title: ${note.title}`);
+  console.log(`Body: ${note.body}`);
+};
 
 module.exports = {
   addNote,
